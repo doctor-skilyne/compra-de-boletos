@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Venta de Boletos</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<img src="heavysaurios-.png" alt="heavysaurios-">
+<h2>GRAN CONCIERTO DEL GRUPO MAS ZONADO DE 
+    LATINO AMERICA :!! HEAVYSAURIOS!!</h2>
+
+<form id="formulario-venta" onsubmit="return validarFormulario()">
+    <label for="nombre">Nombres :</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="text" id="email" name="email" required>
+
+    <label for="evento">Evento:</label>
+    <select id="evento" name="evento" required>
+        <option value="">Selecciona un evento</option>
+        <option value="concierto1">Concierto de Rock - s/50</option>
+        <option value="concierto2">concierto de 6 voltios - s/ 40</option>
+
+    </select>
+
+    <label for="cantidad">Cantidad de boletos:</label>
+    <input type="number" id="cantidad" name="cantidad" min="1" max="1000" required>
+
+    <input type="submit" value="Comprar boletos">
+</form>
+
+<script>
+function validarFormulario() {
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var evento = document.getElementById('evento').value;
+    var cantidad = document.getElementById('cantidad').value;
+
+    if (nombre.trim() == '' || email.trim() == '' || evento == '' || cantidad == '') {
+        alert('Por favor completa todos los campos.');
+        return false;
+    }
+    return true;
+}
+</script>
+
+</body>
+</html>
